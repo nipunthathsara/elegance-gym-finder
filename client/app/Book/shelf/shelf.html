@@ -1,0 +1,27 @@
+<div ng-include="'/components/navbar/navbar.html'"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Book Shelf</h1>
+            <form class="form card-frame" name="form" ng-submit="addBook(form)" novalidate>
+                <md-input-container flex>
+                    <label>Name</label>
+                    <input type="text" name="name" ng-model="book.name" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Author</label>
+                    <input type="text" name="author" ng-model="book.author" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>ISBN</label>
+                    <input type="text" name="isbn" ng-model="book.isbn" required>
+                </md-input-container>
+                <div>
+                    <md-button class="md-primary md-raised" type="submit">
+                        Save
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
