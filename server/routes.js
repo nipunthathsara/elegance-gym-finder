@@ -8,7 +8,7 @@ var errors = require('./components/errors');
 
 module.exports = function(app) {
  
-  app.use('/api/books', require('./api/books')); 
+  app.use('/api/gyms', require('./api/gym')); 
   app.use('/api/users', require('./api/user')); 
 
   app.use('/auth', require('./auth'));

@@ -1,40 +1,40 @@
 'use strict';
 
 var _ = require('lodash');
-var BookFacade = require('./books.facade');
+var GymFacade = require('./gym.facade');
 
 exports.index = function(req, res) {
-    BookFacade.findAll(function(err, tenants) {
+    GymFacade.findAll(function(err, gyms) {
         if (err) {
             return handleError(res, err); }
-        return res.json(200, tenants);
+        return res.json(200, gyms);
     });
 };
 
 exports.show = function(req, res) {
-    BookFacade.findById(req.params.id, function(err, tenant) {
+    GymFacade.findById(req.params.id, function(err, gym) {
         if (err) {
             return handleError(res, err); }
-        if (!tenant) {
+        if (!gym) {
             return res.send(404); }
-        return res.json(tenant);
+        return res.json(gym);
     });
 };
 
 exports.create = function(req, res) {
-    BookFacade.create(req.body, function(err, tenant) {
+    GymFacade.create(req.body, function(err, gym) {
         if (err) {
             return handleError(res, err); }
-        return res.json(201, tenant);
+        return res.json(201, gym);
     });
 };
 
 exports.update = function(req, res) {
     if (req.body._id) { delete req.body._id; }
-    BookFacade.update(req.params.id, req.body, function(err, tenant) {
+    GymFacade.update(req.params.id, req.body, function(err, gym) {
         if (err) {
             return handleError(res, err); }
-        return res.json(200, tenant);
+        return res.json(200, gym);
     });
 };
 
