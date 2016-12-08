@@ -6,6 +6,9 @@ angular.module('AnnAuthApp')
         $scope.errors = {};
 
         $scope.addGym = function(form) {
+
+         
+
             Shelf.addGym({
                     name: $scope.gym.name,
                     location: $scope.gym.location,
@@ -15,7 +18,7 @@ angular.module('AnnAuthApp')
                     price: $scope.gym.price,
                     hours: $scope.gym.hours,
                     webSite: $scope.gym.webSite,
-                    cover: $scope.gym.photo
+                    cover: $scope.file
                 })
                 .then(function() {
                     $location.path('/shelf');

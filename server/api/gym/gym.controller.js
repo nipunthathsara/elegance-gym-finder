@@ -26,18 +26,20 @@ exports.show = function(req, res) {
 
 exports.create = function(req, res) {
     //*******************Uploading the image to folder, doesn't work
-    console.log("reached");//earse
+    console.log("reached");
     upload(req, res, function(err) {
             if (err) {
                 console.log('Error Occured');
                 return;
             }
-            console.log(req.file);
-            res.end('Your File Uploaded');
+            console.log(req.body);
+            console.log(req.body.Blob);
+            //res.end('Your File Uploaded');
             console.log('Photo Uploaded');
     });
-    console.log("reached");//earse
+    console.log("reached");
     //*******************
+
     GymFacade.create(req.body, function(err, gym) {
         if (err) {
             return handleError(res, err);
