@@ -7,6 +7,10 @@ angular.module('AnnAuthApp')
 
       addGym: function(gym) {
         return $http.post('/api/gyms', gym);
+      },
+
+      listGyms: function(){
+      	return $http.get('/api/gyms')
       }
 
     };

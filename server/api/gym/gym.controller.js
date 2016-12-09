@@ -33,7 +33,7 @@ exports.create = function(req, res) {
                 return;
             }
             console.log(req.body);
-            console.log(req.body.Blob);
+            console.log(req.Blob);
             //res.end('Your File Uploaded');
             console.log('Photo Uploaded');
     });

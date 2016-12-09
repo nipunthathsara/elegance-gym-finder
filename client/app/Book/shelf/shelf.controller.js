@@ -5,9 +5,12 @@ angular.module('AnnAuthApp')
         $scope.gym = {};
         $scope.errors = {};
 
-        $scope.addGym = function(form) {
+        Shelf.listGyms().then(function(data){
+            $scope.gymlist = data.data;
+        });
+        
 
-         
+        $scope.addGym = function(form) {
 
             Shelf.addGym({
                     name: $scope.gym.name,
