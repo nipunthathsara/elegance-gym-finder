@@ -3,14 +3,21 @@
     <div class="row">
         <div class="col-sm-12">
             <h1>Gym List</h1>
-            <table >
+            <table class="table">
                 <tr>
                     <th>Name</th>
                     <th>Type</th>
+                    <th>Phone</th>
+                    <th>Location</th>
                 </tr>
                 <tr ng-repeat="gym in gymlist">
                     <td>{{gym.name}}</td>
                     <td>{{gym.type}}</td>
+                    <td>{{gym.phone}}</td>
+                    <td>{{gym.location}}</td>
+                    <td><button class="md-primary md-raised" ng-click="editGym(gym)">Edit</button>
+                        <button class="md-warn">Delete</button>
+                    </td>
                 </tr>
             </table>
 
