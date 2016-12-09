@@ -1,7 +1,8 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./books.controller');
+var multer = require('multer');
+var controller = require('./gym.controller');
 
 var router = express.Router();
 

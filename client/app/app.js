@@ -7,6 +7,7 @@ angular.module('AnnAuthApp', [
         'ngMessages',
         'ui.bootstrap',
         'ngMaterial',
+        'ngFileUpload'
     ])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
         $urlRouterProvider
