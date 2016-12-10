@@ -1,18 +1,29 @@
 'use strict';
 
 angular.module('AnnAuthApp')
-    .controller('ShelfCtrl', function($location, $scope, $http, Shelf) {
+    .controller('ShelfCtrl', function($window, $location, $scope, $http, Shelf) {
         $scope.gym = {};
         $scope.errors = {};
-        //$scope.editGym = {};
+        $scope.editGym={};
 
         Shelf.listGyms().then(function(data) {
             $scope.gymlist = data.data;
         });
 
+        $scope.deleteGym = function(gymObj){
+            if(confirm('You sure want to delete this item?')){
+                Shelf.deleteGym(gymObj._id).then(function(){
+                    $window.location.reload();
+                });
+            }
+        }
+
         $scope.editGym = function(gymObj) {
             $location.path('/editGym');
-//            $scope.name = 'fffff';
+            $scope.editGym={location: gymObj.location};
+
+            //couldn't bind edit window fields with gymObj details :(
+
             /*editGym.type = gymObj.type;
             editGym = {
                 name: gymObj.name,

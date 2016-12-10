@@ -21,10 +21,25 @@ exports.create = function(item, cb) {
 // Updates an existing gym in the DB.
 exports.update = function(id, item, cb) {
     if (item._id) { delete item._id; }
-    GymModel.findById(id,function(err, gym) {
+    GymModel.findById(id, function(err, gym) {
         var updated = _.merge(gym, item);
         updated.save(function(err) {
             cb(err, gym);
         });
+    });
+};
+
+//Nipun - delete entry
+exports.delete = function(id, cb) {
+    /*if (item._id) { delete item._id; }
+    GymModel.findById(id, function(err, gym) {
+        var updated = _.merge(gym, item);
+        updated.save(function(err) {
+            cb(err, gym);
+        });
+    });*/
+
+    GymModel.findByIdAndRemove(id, function(err, result) {
+            cb(err);
     });
 };

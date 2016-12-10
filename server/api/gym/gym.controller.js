@@ -58,6 +58,17 @@ exports.update = function(req, res) {
     });
 };
 
+//********************delete controller function - nipun - works fine
+exports.delete = function(req, res) {
+    GymFacade.delete(req.params.id, function(err){
+        if(err){
+            return handleError(res, err);
+        }
+        return res.json(200, 'gym deleted successfully');
+    });
+};
+//**********************
+
 //******************** configuring Multer
 var storage = multer.diskStorage({
     destination: function(req, file, callback) {
