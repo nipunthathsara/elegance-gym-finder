@@ -4,7 +4,7 @@ angular.module('AnnAuthApp')
     .controller('ShelfCtrl', function($window, $location, $scope, $http, Shelf) {
         $scope.gym = {};
         $scope.errors = {};
-        $scope.editGym={};
+        $scope.editGym = {};
 
         Shelf.listGyms().then(function(data) {
             $scope.gymlist = data.data;
@@ -20,25 +20,10 @@ angular.module('AnnAuthApp')
 
         $scope.editGym = function(gymObj) {
             $location.path('/editGym');
-            $scope.editGym={location: gymObj.location};
+            console.log(gymObj);
+            $scope.editgym.name=gymObj.name;//not binding
 
-            //couldn't bind edit window fields with gymObj details :(
-
-            /*editGym.type = gymObj.type;
-            editGym = {
-                name: gymObj.name,
-                location: gymObj.location,
-                type: gymObj.type,
-                address: gymObj.address,
-                phone: gymObj.phone,
-                price: gymObj.price,
-                hours: gymObj.hours,
-                webSite: gymObj.webSite
-                //cover field to be added
-            };*/
-            /*$scope.editGym = gymObj;
-            console.log('gggg');
-            console.log(editGym);*/
+           
         }
 
 
@@ -64,18 +49,18 @@ angular.module('AnnAuthApp')
                 });
         }
 
-        $scope.editGymWindow = function(form, id) {
+        $scope.submitEdit = function(form, id) {
 
             Shelf.editGym({
-                    name: $scope.gym.name,
-                    location: $scope.gym.location,
-                    type: $scope.gym.type,
-                    address: $scope.gym.address,
-                    phone: $scope.gym.phone,
-                    price: $scope.gym.price,
-                    hours: $scope.gym.hours,
-                    webSite: $scope.gym.webSite,
-                    cover: $scope.file
+                    name: $scope.editGym.name,
+                    location: $scope.editGym.location,
+                    type: $scope.editGym.type,
+                    address: $scope.editGym.address,
+                    phone: $scope.editGym.phone,
+                    price: $scope.editGym.price,
+                    hours: $scope.editGym.hours,
+                    webSite: $scope.editGym.webSite
+                    //cover to be added
                 })
                 .then(function() {
                     $location.path('/listGyms');
