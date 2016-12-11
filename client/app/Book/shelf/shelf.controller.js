@@ -1,13 +1,33 @@
 'use strict';
 
 angular.module('AnnAuthApp')
-    .controller('ShelfCtrl', function($location, $scope, $http, Shelf) {
+    .controller('ShelfCtrl', function($window, $location, $scope, $http, Shelf) {
         $scope.gym = {};
         $scope.errors = {};
+        $scope.editGym = {};
+
+        Shelf.listGyms().then(function(data) {
+            $scope.gymlist = data.data;
+        });
+
+        $scope.deleteGym = function(gymObj){
+            if(confirm('You sure want to delete this item?')){
+                Shelf.deleteGym(gymObj._id).then(function(){
+                    $window.location.reload();
+                });
+            }
+        }
+
+        $scope.editGym = function(gymObj) {
+            $location.path('/editGym');
+            console.log(gymObj);
+            $scope.editgym.name=gymObj.name;//not binding
+
+           
+        }
+
 
         $scope.addGym = function(form) {
-
-         
 
             Shelf.addGym({
                     name: $scope.gym.name,
@@ -21,11 +41,33 @@ angular.module('AnnAuthApp')
                     cover: $scope.file
                 })
                 .then(function() {
-                    $location.path('/shelf');
+                    $location.path('/listGyms');
                 })
                 .catch(function(err) {
                     $scope.errors.other = err.message; //not displaying
                     console.log('error ocured while saving gym');
+                });
+        }
+
+        $scope.submitEdit = function(form, id) {
+
+            Shelf.editGym({
+                    name: $scope.editGym.name,
+                    location: $scope.editGym.location,
+                    type: $scope.editGym.type,
+                    address: $scope.editGym.address,
+                    phone: $scope.editGym.phone,
+                    price: $scope.editGym.price,
+                    hours: $scope.editGym.hours,
+                    webSite: $scope.editGym.webSite
+                    //cover to be added
+                })
+                .then(function() {
+                    $location.path('/listGyms');
+                })
+                .catch(function(err) {
+                    $scope.errors.other = err.message; //not displaying
+                    console.log('error ocured while editing gym');
                 });
         }
 

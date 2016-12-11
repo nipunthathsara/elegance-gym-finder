@@ -33,7 +33,7 @@ exports.create = function(req, res) {
                 return;
             }
             console.log(req.body);
-            console.log(req.body.Blob);
+            console.log(req.Blob);
             //res.end('Your File Uploaded');
             console.log('Photo Uploaded');
     });
@@ -57,6 +57,17 @@ exports.update = function(req, res) {
         return res.json(200, gym);
     });
 };
+
+//********************delete controller function - nipun - works fine
+exports.delete = function(req, res) {
+    GymFacade.delete(req.params.id, function(err){
+        if(err){
+            return handleError(res, err);
+        }
+        return res.json(200, 'gym deleted successfully');
+    });
+};
+//**********************
 
 //******************** configuring Multer
 var storage = multer.diskStorage({
