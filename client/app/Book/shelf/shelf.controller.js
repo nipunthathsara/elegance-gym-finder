@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('AnnAuthApp')
-    .controller('ShelfCtrl', function($window, $location, $scope, $http, Shelf,$rootScope) {
+    .controller('ShelfCtrl', function($window, $location, $scope, $http, Shelf, $rootScope) {
         $scope.gym = {};
         $scope.errors = {};
         $scope.editGym = {};
@@ -18,13 +18,9 @@ angular.module('AnnAuthApp')
             }
         }
 
-        $scope.editGym = function(gymObj) {
+        $scope.editGym = function(gymObj) {               
+            $rootScope.gimObject=gymObj;
             $location.path('/editGym');
-            console.log(gymObj.name);
-            //vn.editgym=bn;//not binding
-            console.log('hhhhhhhhhhh');
-            /*$scope.$apply();*/
-           
         }
 
 
