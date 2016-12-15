@@ -3,12 +3,12 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var NutritionSchema = new Schema({
+var NutritionistSchema = new Schema({
   name: String,
-  contactNo:String,
+  phone:String,
   address:{no:String,street:String,city:String},
-  available:Boolean,
+  availability:Boolean,
   rating:Number
 });
 
-module.exports = mongoose.model('Nutrition', NutritionSchema);
+module.exports = mongoose.model('Nutritionist', NutritionistSchema);

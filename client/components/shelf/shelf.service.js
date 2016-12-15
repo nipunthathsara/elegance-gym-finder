@@ -6,6 +6,7 @@ angular.module('AnnAuthApp')
     return {
 
       addGym: function(gym) {
+        console.log("bbbb");
         return $http.post('/api/gyms', gym);
       },
 

@@ -10,7 +10,7 @@ module.exports = function(app) {
  
   app.use('/api/gyms', require('./api/gym')); 
   app.use('/api/users', require('./api/user')); 
-   app.use('/api/nutritions', require('./api/nutritions')); 
+   app.use('/api/nutritionist', require('./api/nutritionist')); 
 
   app.use('/auth', require('./auth'));
    

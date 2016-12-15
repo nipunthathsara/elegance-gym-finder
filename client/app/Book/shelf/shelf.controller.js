@@ -28,7 +28,7 @@ angular.module('AnnAuthApp')
 
 
         $scope.addGym = function(form) {
-
+console.log("aaa");
             Shelf.addGym({
                     name: $scope.gym.name,
                     location: $scope.gym.location,
