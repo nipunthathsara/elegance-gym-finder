@@ -1,33 +1,33 @@
 'use strict';
 var multer = require('multer');
 var _ = require('lodash');
-var GymFacade = require('./gym.facade');
+var TrainerFacade = require('./trainer.facade');
 
-exports.index = function (req, res) {
-    GymFacade.findAll(function (err, gyms) {
+exports.index = function(req, res) {
+    TrainerFacade.findAll(function(err, trainers) {
         if (err) {
             return handleError(res, err);
         }
-        return res.json(200, gyms);
+        return res.json(200, trainers);
     });
 };
 
-exports.show = function (req, res) {
-    GymFacade.findById(req.params.id, function (err, gym) {
+exports.show = function(req, res) {
+    TrainerFacade.findById(req.params.id, function(err, trainer) {
         if (err) {
             return handleError(res, err);
         }
-        if (!gym) {
+        if (!trainer) {
             return res.send(404);
         }
-        return res.json(gym);
+        return res.json(trainer);
     });
 };
 
-exports.create = function (req, res) {
+exports.create = function(req, res) {
     //*******************Uploading the image to folder, doesn't work
     console.log("reached");
-    upload(req, res, function (err) {
+    upload(req, res, function(err) {
         if (err) {
             console.log('Error Occured');
             return;
@@ -40,50 +40,48 @@ exports.create = function (req, res) {
     console.log("reached");
     //*******************
 
-    GymFacade.create(req.body, function (err, gym) {
+    TrainerFacade.create(req.body, function(err, trainer) {
         if (err) {
             return handleError(res, err);
         }
-        return res.json(201, gym);
+        return res.json(201, trainer);
     });
 };
 
-exports.update = function (req, res) {
-    if (req.body._id) {
-        delete req.body._id;
-    }
-    GymFacade.update(req.params.id, req.body, function (err, gym) {
+exports.update = function(req, res) {
+    if (req.body._id) { delete req.body._id; }
+    TrainerFacade.update(req.params.id, req.body, function(err, trainer) {
         if (err) {
             return handleError(res, err);
         }
-        return res.json(200, gym);
+        return res.json(200, trainer);
     });
 };
 
 //********************delete controller function - nipun - works fine
-exports.delete = function (req, res) {
-    GymFacade.delete(req.params.id, function (err) {
-        if (err) {
+exports.delete = function(req, res) {
+    TrainerFacade.delete(req.params.id, function(err){
+        if(err){
             return handleError(res, err);
         }
-        return res.json(200, 'gym deleted successfully');
+        return res.json(200, 'trainer deleted successfully');
     });
 };
 //**********************
 
 //******************** configuring Multer
 var storage = multer.diskStorage({
-    destination: function (req, file, callback) {
+    destination: function(req, file, callback) {
         callback(null, './uploads')
     },
-    filename: function (req, file, callback) {
+    filename: function(req, file, callback) {
         console.log('configuration file reached');
         console.log(file);
         callback(null, file.originalname);
     }
 });
 
-var upload = multer({storage: storage}).single('photo');
+var upload = multer({ storage: storage }).single('photo');
 //********************
 
 function handleError(res, err) {

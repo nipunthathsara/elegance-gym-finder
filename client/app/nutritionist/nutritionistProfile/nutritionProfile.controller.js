@@ -20,15 +20,11 @@ angular.module('AnnAuthApp')
         }
 
         $scope.editNutritionist = function(nutritionist) {
-          if(nutritionist){
-           
+                  
               $rootScope.tempNutritionist=nutritionist;
              // NutritionistService.checkFun(3);
               $location.path('/editNutritionist');   
-           }
-           else{
-              $location.path('/viewNutritionists'); 
-           }   
+        
         }
 
 
