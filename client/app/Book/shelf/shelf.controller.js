@@ -20,11 +20,8 @@ angular.module('AnnAuthApp')
 
         $scope.editGym = function(gymObj) {
             $location.path('/editGym');
+            $rootScope.editGymObj = gymObj;
             console.log(gymObj.name);
-            //vn.editgym=bn;//not binding
-            console.log('hhhhhhhhhhh');
-            /*$scope.$apply();*/
-           
         }
 
 
@@ -55,12 +52,9 @@ angular.module('AnnAuthApp')
             Shelf.editGym({
                     name: $scope.editGym.name,
                     location: $scope.editGym.location,
-                    type: $scope.editGym.type,
                     address: $scope.editGym.address,
                     phone: $scope.editGym.phone,
-                    price: $scope.editGym.price,
-                    hours: $scope.editGym.hours,
-                    webSite: $scope.editGym.webSite
+                    price: $scope.editGym.price
                     //cover to be added
                 })
                 .then(function() {
@@ -68,7 +62,7 @@ angular.module('AnnAuthApp')
                 })
                 .catch(function(err) {
                     $scope.errors.other = err.message; //not displaying
-                    console.log('error ocured while editing gym');
+                    console.log('error occurred while editing gym');
                 });
         }
 

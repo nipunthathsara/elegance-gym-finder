@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('AnnAuthApp')
-    .controller('trainerProfileCtrl', function($window, $location, $scope, $http, Trainer,$rootScope) {
+    .controller('trainerCtrl', function($window, $location, $scope, $http, Trainer,$rootScope) {
         $scope.trainer = {};
         $scope.errors = {};
         // $scope.editTrainer = {};
@@ -30,9 +30,12 @@ angular.module('AnnAuthApp')
             Trainer.addTrainer({
                 name: $scope.trainer.name,
                 location: $scope.trainer.location,
-                address: $scope.trainer.address,
+                services: $scope.trainer.services,
                 phone: $scope.trainer.phone,
                 price: $scope.trainer.price,
+                certification: $scope.trainer.certification,
+                insured: $scope.trainer.insured,
+                facilityOrHouseCalls: $scope.trainer.facilityOrHouseCalls,
                 cover: $scope.file
             })
                 .then(function() {
@@ -40,7 +43,7 @@ angular.module('AnnAuthApp')
                 })
                 .catch(function(err) {
                     $scope.errors.other = err.message; //not displaying
-                    console.log('error ocured while saving trainer');
+                    console.log('error occurred while saving trainer');
                 });
         }
 
@@ -49,9 +52,12 @@ angular.module('AnnAuthApp')
             Trainer.editTrainer({
                 name: $scope.editTrainer.name,
                 location: $scope.editTrainer.location,
-                address: $scope.editTrainer.address,
+                services: $scope.editTrainer.services,
                 phone: $scope.editTrainer.phone,
-                price: $scope.editTrainer.price
+                price: $scope.editTrainer.price,
+                certification: $scope.editTrainer.certification,
+                insured: $scope.editTrainer.insured,
+                facilityOrHouseCalls: $scope.editTrainer.facilityOrHouseCalls,
                 //cover to be added
             })
                 .then(function() {
