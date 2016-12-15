@@ -19,9 +19,10 @@ angular.module('AnnAuthApp')
         }
 
         $scope.editTrainer = function(trainerObj) {
-            $location.path('/editTrainer');
+          
             $rootScope.editTrainerObj = trainerObj;
-            console.log(trainerObj.name);
+              $location.path('/editTrainer');
+           
         }
 
 
@@ -50,16 +51,16 @@ angular.module('AnnAuthApp')
         $scope.submitEdit = function(form, id) {
 
             Trainer.editTrainer({
-                name: $scope.editTrainer.name,
-                location: $scope.editTrainer.location,
-                services: $scope.editTrainer.services,
-                phone: $scope.editTrainer.phone,
-                price: $scope.editTrainer.price,
-                certification: $scope.editTrainer.certification,
-                insured: $scope.editTrainer.insured,
-                facilityOrHouseCalls: $scope.editTrainer.facilityOrHouseCalls,
+                name: $rootScope.editTrainerObj.name,
+                location: $rootScope.editTrainerObj.location,
+                services: $rootScope.editTrainerObj.services,
+                phone: $rootScope.editTrainerObj.phone,
+                price: $rootScope.editTrainerObj.price,
+                certification: $rootScope.editTrainerObj.certification,
+                insured: $rootScope.editTrainerObj.insured,
+                facilityOrHouseCalls: $rootScope.editTrainerObj.facilityOrHouseCalls,
                 //cover to be added
-            })
+            },id)
                 .then(function() {
                     $location.path('/listTrainers');
                 })

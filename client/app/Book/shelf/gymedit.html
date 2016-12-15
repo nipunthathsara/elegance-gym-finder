@@ -4,8 +4,8 @@
         <div class="col-sm-12">
             <h1>Edit Gym Details</h1>
             
-            {{editGym}}
-            <form class="form card-frame" name="form" ng-submit="submitEdit(form)" enctype="multipart/form-data" novalidate>
+            
+            <form class="form card-frame" name="form" ng-submit="submitEdit(form,editGymObj._id)" enctype="multipart/form-data" novalidate>
                 <md-input-container flex>
                     <label>Name</label>
                     <input type="text" name="name" ng-model="editGymObj.name" required>

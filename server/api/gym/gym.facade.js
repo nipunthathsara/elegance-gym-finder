@@ -5,8 +5,15 @@ var GymModel = require('./gym.model');
 
 // Get list of gyms
 exports.findAll = function(cb) {
-    GymModel.find(cb);
+    GymModel.find(cb).limit(2);
+
+
 };
+
+// exports.findTen = function(cb) {
+//     console.log("inside gym facade");
+//     GymModel.find(cb);
+// 
 
 // Get a single gym
 exports.findById = function(id, cb) {
@@ -20,6 +27,7 @@ exports.create = function(item, cb) {
 
 // Updates an existing gym in the DB.
 exports.update = function(id, item, cb) {
+    console.log(id);
     if (item._id) { delete item._id; }
     GymModel.findById(id, function(err, gym) {
         var updated = _.merge(gym, item);

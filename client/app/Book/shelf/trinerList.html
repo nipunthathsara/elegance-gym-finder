@@ -1,0 +1,24 @@
+<div ng-include="'/components/navbar/navbar.html'"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Trainer List</h1>
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Phone</th>
+                    <th>Location</th>
+                </tr>
+                <tr ng-repeat="trainer in trainerList">
+                    <td>{{trainer.name}}</td>
+                    <td>{{trainer.type}}</td>
+                    <td>{{trainer.phone}}</td>
+                    <td>{{trainer.location}}</td>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>

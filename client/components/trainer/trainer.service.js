@@ -13,8 +13,8 @@ angular.module('AnnAuthApp')
                 return $http.get('/api/trainers');
             },
 
-            editTrainer: function(trainer){
-                return $http.put('/api/trainers/:id', trainer);//send id as params to update
+            editTrainer: function(trainer,id){
+                return $http.put('/api/trainers/'+id, trainer);//send id as params to update
                 //not done
             },
 

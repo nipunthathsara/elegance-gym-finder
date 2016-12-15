@@ -4,7 +4,7 @@ angular.module('AnnAuthApp')
     .controller('ShelfCtrl', function($window, $location, $scope, $http, Shelf, $rootScope) {
         $scope.gym = {};
         $scope.errors = {};
-        $scope.editGym = {};
+        // $scope.editGym = {};
 
         Shelf.listGyms().then(function(data) {
             $scope.gymlist = data.data;
@@ -19,16 +19,16 @@ angular.module('AnnAuthApp')
         }
 
         $scope.editGym = function(gymObj) {               
-            $rootScope.gimObject=gymObj;
+            $rootScope.editGymObj=gymObj;
             $location.path('/editGym');
-            $rootScope.editGymObj = gymObj;
-            console.log(gymObj.name);
+            // $rootScope.editGymObj = gymObj;
+            // console.log(gymObj.name);
 
         }
 
 
         $scope.addGym = function(form) {
-console.log("aaa");
+
             Shelf.addGym({
                     name: $scope.gym.name,
                     location: $scope.gym.location,
@@ -50,15 +50,15 @@ console.log("aaa");
         }
 
         $scope.submitEdit = function(form, id) {
-
+            
             Shelf.editGym({
-                    name: $scope.editGym.name,
-                    location: $scope.editGym.location,
-                    address: $scope.editGym.address,
-                    phone: $scope.editGym.phone,
-                    price: $scope.editGym.price
+                    name: $rootScope.editGymObj.name,
+                    location: $rootScope.editGymObj.location,
+                    address: $rootScope.editGymObj.address,
+                    phone: $rootScope.editGymObj.phone,
+                    price: $rootScope.editGymObj.price
                     //cover to be added
-                })
+                }, id)
                 .then(function() {
                     $location.path('/listGyms');
                 })

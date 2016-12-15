@@ -3,14 +3,43 @@ var multer = require('multer');
 var _ = require('lodash');
 var GymFacade = require('./gym.facade');
 
+
 exports.index = function (req, res) {
     GymFacade.findAll(function (err, gyms) {
         if (err) {
+           
             return handleError(res, err);
         }
-        return res.json(200, gyms);
+       if(gyms){
+            
+               
+             return res.json(200, gyms);
+
+       }
+        
     });
 };
+
+
+
+exports.findTen = function(req, res) {
+    GymFacade.findTen(function(err, gyms) {
+        if (err) {
+            return handleError(res, err);
+        }
+       if(gyms){
+            var func=pageLimit(gyms);
+            
+
+             return res.json(200, gyms);
+
+       }
+        
+    });
+};
+
+ 
+
 
 exports.show = function (req, res) {
     GymFacade.findById(req.params.id, function (err, gym) {
