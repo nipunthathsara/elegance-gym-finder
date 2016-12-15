@@ -4,9 +4,17 @@ var _ = require('lodash');
 var GymModel = require('./gym.model');
 
 // Get list of gyms
-exports.findAll = function(cb) {
-    GymModel.find(cb);
+exports.find = function(cb) {
+    console.log('nsjss'+GymModel.find().limit(1));
+    GymModel.find(cb).limit(2);
+
+
 };
+
+// exports.findTen = function(cb) {
+//     console.log("inside gym facade");
+//     GymModel.find(cb);
+// 
 
 // Get a single gym
 exports.findById = function(id, cb) {
