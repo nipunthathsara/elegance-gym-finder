@@ -1,7 +1,6 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-mongoosePaginate = require('mongoose-paginate'),
     Schema = mongoose.Schema;
 
 var GymSchema = new Schema({
@@ -23,6 +22,6 @@ var GymSchema = new Schema({
         required: true
     }*/
 });
-GymSchema.plugin( mongoosePaginate );
+
 
 module.exports = mongoose.model('Gym', GymSchema);
