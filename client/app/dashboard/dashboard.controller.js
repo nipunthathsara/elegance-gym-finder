@@ -4,24 +4,34 @@ angular.module('AnnAuthApp')
     .controller('DashboardCtrl', function($scope, $http,$location) {
 
         $scope.addGym = function(){
+
           $location.path('/addGym');
+
         }
 
         $scope.listGyms = function(){
-          $location.path('/listGyms')
+          $location.path('/listGyms');
         }
 
 
-         /*$scope.books = $http.get('/api/books/'
-         ).
-          then(function(books){
-          	return books;
-          });
+        $scope.addTrainer = function(){
+            $location.path('/addTrainer');
+        }
 
-          $scope.addBook = function(form){
-          	$http.post('api/books/',form.book
-          	).
-          	then(function())
-          };*/
+        $scope.listTrainers = function(){
+            $location.path('/listTrainers');
+        }
+
+
+
+        $scope.addNutritionist = function(){
+
+          $location.path('/addNutritionist');
+
+        }
+
+        $scope.viewNutritionists = function(){
+          $location.path('/viewNutritionists')
+        }
 
     });

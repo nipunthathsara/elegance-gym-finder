@@ -1,0 +1,61 @@
+<div ng-include="'/components/navbar/navbar.html'"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Add Trainer</h1>
+            <form class="form card-frame" name="form" ng-submit="addTrainer(form)" enctype="multipart/form-data" novalidate>
+                <md-input-container flex>
+                    <label>Name</label>
+                    <input type="text" name="name" ng-model="trainer.name" required>
+                </md-input-container>
+                <md-content layout-padding>
+                    Insured
+                    <md-checkbox ng-model="trainer.insured" aria-label="Insured" required >
+                    </md-checkbox>
+                </md-content>
+                <md-input-container flex>
+                    <label>Services</label>
+                    <input type="text" name="services" ng-model="trainer.services" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Location</label>
+                    <input type="text" name="location" ng-model="trainer.location" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Certification</label>
+                    <input type="text" name="certification" ng-model="trainer.certification" required>
+                </md-input-container>
+                <md-content layout-padding>
+                    Facility or House Calls
+                    <md-radio-group ng-model="trainer.facilityOrHouseCalls" required>
+                        <md-radio-button value="Facility" aria-label="Label 1">
+                            Facility
+                        </md-radio-button>
+                        <md-radio-button value="House Calls" aria-label="Label 2">
+                            House Calls
+                        </md-radio-button>
+                        <md-radio-button value="Both" aria-label="Label 3">
+                            Both
+                        </md-radio-button>
+                    </md-radio-group>
+                </md-content>
+                <md-input-container flex>
+                    <label>Price</label>
+                    <input type="text" name="price" ng-model="trainer.price" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Cover photo</label>
+                    <!-- <input type="file" name="photo" ng-model="trainer.photo" required> -->
+                    <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                         ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                         ngf-resize="{width: 100, height: 100}">Select</div>
+                </md-input-container>
+                <div>
+                    <md-button class="md-primary md-raised" type="submit">
+                        Save
+                        </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

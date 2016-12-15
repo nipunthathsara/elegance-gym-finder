@@ -8,8 +8,10 @@ var errors = require('./components/errors');
 
 module.exports = function(app) {
  
-  app.use('/api/gyms', require('./api/gym')); 
+  app.use('/api/gyms', require('./api/gym'));
+  app.use('/api/trainers', require('./api/trainer'));
   app.use('/api/users', require('./api/user')); 
+   app.use('/api/nutritionist', require('./api/nutritionist')); 
 
   app.use('/auth', require('./auth'));
    
