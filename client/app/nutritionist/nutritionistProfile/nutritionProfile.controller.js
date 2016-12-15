@@ -50,7 +50,7 @@ angular.module('AnnAuthApp')
             NutritionistService.editNutritionist({
                     name: $rootScope.tempNutritionist.name,
                     phone: $rootScope.tempNutritionist.phone,
-                    address: {no:$scope.tempNutritionist.address,street:"",city:""},
+                    address: {no:$rootScope.tempNutritionist.address,street:"",city:""},
                     availability: $rootScope.tempNutritionist.availability,
                     rating: $rootScope.tempNutritionist.rating,
 
