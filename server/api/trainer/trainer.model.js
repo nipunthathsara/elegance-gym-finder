@@ -7,7 +7,7 @@ var TrainerSchema = new Schema({
     services:String,
     price: String,
     certification:String,
-    insured:Boolean,
+    insured:String,
     facilityOrHouseCalls:String,
     location:String,
     name:String,

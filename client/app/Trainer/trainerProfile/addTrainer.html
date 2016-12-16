@@ -8,10 +8,20 @@
                     <label>Name</label>
                     <input type="text" name="name" ng-model="trainer.name" required>
                 </md-input-container>
+                <md-input-container flex>
+                    <label>Phone</label>
+                    <input type="text" name="phone" ng-model="trainer.phone" required>
+                </md-input-container>
                 <md-content layout-padding>
                     Insured
-                    <md-checkbox ng-model="trainer.insured" aria-label="Insured" required >
-                    </md-checkbox>
+                    <md-radio-group ng-model="trainer.insured" required>
+                        <md-radio-button value="Yes" aria-label="Label 1">
+                            Yes
+                        </md-radio-button>
+                        <md-radio-button value="No" aria-label="Label 2">
+                            No
+                        </md-radio-button>
+                    </md-radio-group>
                 </md-content>
                 <md-input-container flex>
                     <label>Services</label>

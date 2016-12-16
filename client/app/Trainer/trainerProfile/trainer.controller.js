@@ -25,7 +25,6 @@ angular.module('AnnAuthApp')
            
         }
 
-
         $scope.addTrainer = function(form) {
 
             Trainer.addTrainer({
