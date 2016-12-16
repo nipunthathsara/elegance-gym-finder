@@ -22,7 +22,7 @@ angular.module('AnnAuthApp')
             }
         };
 
-        $scope.goSignUp = function() {
+        $scope.goToSignUp = function() {
             $location.path('/signup');
         };
 

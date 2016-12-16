@@ -9,8 +9,12 @@
                     <input type="text" name="name" ng-model="gym.name" required>
                 </md-input-container>
                 <md-input-container flex>
-                    <label>Location</label>
-                    <input type="text" name="location" ng-model="gym.location" required>
+                    <label>Latitude</label>
+                    <input type="text" name="latitude" ng-model="gym.latitude" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Longitude</label>
+                    <input type="text" name="longitude" ng-model="gym.longitude" required>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Type</label>
@@ -57,7 +61,7 @@
                     <div>
                         <md-button class="md-primary md-raised" type="submit">
                             Save
-                            </button>
+                            </md-button>
                     </div>
             </form>
         </div>

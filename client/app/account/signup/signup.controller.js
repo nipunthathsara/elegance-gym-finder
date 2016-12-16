@@ -15,7 +15,7 @@ angular.module('AnnAuthApp')
                         confirmedPassword:$scope.user.confirmedPassword,
                         name: $scope.user.name
                     })
-                    .then(function() { 
+                    .then(function() {
                         $location.path('/');
                     })
                     .catch(function(err) {
@@ -24,8 +24,17 @@ angular.module('AnnAuthApp')
             }
         };
 
-        $scope.goLogIn = function() {
+        $scope.goToLogin = function() {
             $location.path('/login');
+        };
+
+        $scope.validatePassword = function(password, confirmedPassword) {
+            if(password == confirmedPassword){
+
+            }
+            else {
+                return "Passwords do not match.Please Try again";
+            }
         };
 
 	});

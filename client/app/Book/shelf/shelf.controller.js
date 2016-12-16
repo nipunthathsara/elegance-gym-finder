@@ -26,7 +26,8 @@ angular.module('AnnAuthApp')
         $scope.addGym = function(form) {
             Shelf.addGym({
                     name: $scope.gym.name,
-                    location: $scope.gym.location,
+                    latitude: $scope.gym.latitude,
+                    longitude: $scope.gym.longitude,
                     type: $scope.gym.type,
                     address: {
                         no: $scope.gym.number,
@@ -52,7 +53,8 @@ angular.module('AnnAuthApp')
             
             Shelf.editGym({
                     name: $rootScope.editGymObj.name,
-                    location: $rootScope.editGymObj.location,
+                    latitude: $rootScope.editGymObj.latitude,
+                    longitude: $rootScope.editGymObj.longitude,
                     address: {
                         no: $rootScope.editGymObj.number,
                         street: $rootScope.editGymObj.street,

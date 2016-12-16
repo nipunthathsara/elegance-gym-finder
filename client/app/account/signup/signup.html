@@ -5,7 +5,7 @@
             <h1>Signup</h1>
         </div>
         <div class="col-sm-4 col-sm-offset-4">
-            <form class="form card-frame" name="form" ng-submit="signup(form)" novalidate>
+            <form class="form card-frame" name="form" ng-submit="signup(form)" >
                 <md-input-container flex>
                     <label>Name</label>
                     <input type="text" name="name" ng-model="user.name" required>
@@ -20,15 +20,9 @@
                 </md-input-container>
                 <md-input-container flex>
                     <label>Confirm Password</label>
-                    <input type="password" name="confirmedPassword" required>
+                    <input type="password" name="confirmedPassword" ng-model="user.confirmedPassword" required>
                 </md-input-container>
                 <div class="form-group has-error">
-                    <p class="help-block" ng-show="!(password === confirmedPassword)">
-                        Passwords do not match.
-                    </p>
-                    <p class="help-block" ng-show="((password != null) && (confirmedPassword == null))">
-                        Please confirm the password.
-                    </p>
                     <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && submitted">
                         Please enter your email and password.
                     </p>
@@ -44,7 +38,7 @@
                 </div>
                 <div>
                     Already have an account?
-                    <md-button class="md-primary md-raised" ng-click="goLogIn()">
+                    <md-button class="md-primary md-raised" ng-click="goToLogin()">
                         Log In
                     </md-button>
                 </div>
