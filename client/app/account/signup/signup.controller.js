@@ -12,6 +12,7 @@ angular.module('AnnAuthApp')
                 Auth.createUser({
                         email: $scope.user.email,
                         password: $scope.user.password,
+                        confirmedPassword:$scope.user.confirmedPassword,
                         name: $scope.user.name
                     })
                     .then(function() { 
@@ -21,5 +22,10 @@ angular.module('AnnAuthApp')
                         $scope.errors.other = err.message;
                     });
             }
-        }; 
+        };
+
+        $scope.goLogIn = function() {
+            $location.path('/login');
+        };
+
 	});
