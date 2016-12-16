@@ -36,6 +36,7 @@ angular.module('AnnAuthApp')
                 certification: $scope.trainer.certification,
                 insured: $scope.trainer.insured,
                 facilityOrHouseCalls: $scope.trainer.facilityOrHouseCalls,
+                rating: $scope.trainer.rating,
                 cover: $scope.file
             })
                 .then(function() {
@@ -58,6 +59,7 @@ angular.module('AnnAuthApp')
                 certification: $rootScope.editTrainerObj.certification,
                 insured: $rootScope.editTrainerObj.insured,
                 facilityOrHouseCalls: $rootScope.editTrainerObj.facilityOrHouseCalls,
+                rating: $rootScope.editTrainerObj.rating,
                 //cover to be added
             },id)
                 .then(function() {

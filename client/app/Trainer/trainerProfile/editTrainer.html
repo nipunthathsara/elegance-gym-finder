@@ -55,6 +55,10 @@
                     <input type="text" name="price" ng-model="editTrainerObj.price" required>
                 </md-input-container>
                 <md-input-container flex>
+                    <label>Rating</label>
+                    <input type="text" name="rating" ng-model="editTrainerObj.rating" required>
+                </md-input-container>
+                <md-input-container flex>
                     <label>Cover photo</label>
                     <!-- <input type="file" name="photo" ng-model="editTrainerObj.photo" required> -->
                     <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}">Select</div>
