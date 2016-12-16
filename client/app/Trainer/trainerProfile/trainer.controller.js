@@ -34,7 +34,7 @@ angular.module('AnnAuthApp')
                 phone: $scope.trainer.phone,
                 price: $scope.trainer.price,
                 certification: $scope.trainer.certification,
-                insured: $scope.trainer.insured,
+                insureStatus: $scope.trainer.insureStatus,
                 facilityOrHouseCalls: $scope.trainer.facilityOrHouseCalls,
                 rating: $scope.trainer.rating,
                 cover: $scope.file
@@ -57,7 +57,7 @@ angular.module('AnnAuthApp')
                 phone: $rootScope.editTrainerObj.phone,
                 price: $rootScope.editTrainerObj.price,
                 certification: $rootScope.editTrainerObj.certification,
-                insured: $rootScope.editTrainerObj.insured,
+                insureStatus: $rootScope.editTrainerObj.insureStatus,
                 facilityOrHouseCalls: $rootScope.editTrainerObj.facilityOrHouseCalls,
                 rating: $rootScope.editTrainerObj.rating,
                 //cover to be added
