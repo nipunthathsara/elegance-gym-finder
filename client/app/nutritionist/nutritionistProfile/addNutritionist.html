@@ -3,7 +3,8 @@
     <div class="row">
         <div class="col-sm-12">
             <h1>Add Nutritionist</h1>
-            <form class="form card-frame" name="form" ng-submit="addNutritionist(form)" enctype="multipart/form-data" novalidate>
+            <form class="form card-frame" name="form" ng-submit="addNutritionist(form)" enctype="multipart/form-data"
+                  novalidate>
                 <md-input-container flex>
                     <label>Name</label>
                     <input type="text" name="name" ng-model="nutritionist.name" required>
@@ -12,24 +13,42 @@
                     <label>Phone</label>
                     <input type="text" name="phone" ng-model="nutritionist.phone" required>
                 </md-input-container>
+                <md-content layout-padding>
+                    Address
+                    <md-input-container flex>
+                        <label>Number</label>
+                        <input type="text" name="number" ng-model="nutritionist.number" required>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Street</label>
+                        <input type="text" name="street" ng-model="nutritionist.street" required>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>City</label>
+                        <input type="text" name="city" ng-model="nutritionist.city" required>
+                    </md-input-container>
+                </md-content>
                 <md-input-container flex>
-                    <label>Address</label>
-                    <input type="text" name="address" ng-model="nutritionist.address" required>
-                </md-input-container>
-                <md-input-container flex>
-                    <label>Availability</label>
-                    <input type="text" name="availability" ng-model="nutritionist.availability" required>
+                    Availability
+                    <md-radio-group ng-model="nutritionist.availability" required>
+                        <md-radio-button name="true" ng-value="true" aria-label="Label 1">
+                            Yes
+                        </md-radio-button>
+                        <md-radio-button name="false" ng-value="false" aria-label="Label 2">
+                            No
+                        </md-radio-button>
+                    </md-radio-group>
                 </md-input-container>
                 <md-input-container flex>
                     <label>Rating</label>
                     <input type="text" name="rating" ng-model="nutritionist.rating" required>
                 </md-input-container>
-               
-                 <div>
-                        <md-button class="md-primary md-raised" type="submit">
-                            Save
-                            </button>
-                    </div>
+
+                <div>
+                    <md-button class="md-primary md-raised" type="submit">
+                        Save
+                    </md-button>
+                </div>
             </form>
         </div>
     </div>

@@ -15,7 +15,7 @@
                 <tr ng-repeat="nutritionist in nutritionists">
                     <td>{{nutritionist.name}}</td>
                     <td>{{nutritionist.phone}}</td>
-                    <td>{{nutritionist.address}}</td>
+                    <td>{{nutritionist.address.no}}{{','}}{{nutritionist.address.street}}{{','}}{{nutritionist.address.city}}</td>
                     <td>{{nutritionist.availability}}</td>
                     <td>{{nutritionist.rating}}</td>
                     <td><button class="md-primary md-raised" ng-click="editNutritionist(nutritionist)">Edit</button>

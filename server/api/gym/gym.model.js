@@ -5,9 +5,10 @@ var mongoose = require('mongoose'),
 
 var GymSchema = new Schema({
     name: String,
-    location: String,
+    latitude:Number,
+    longitude: Number,
     type: String,
-    address: String,
+    address:{no:String,street:String,city:String},
     phone: String,
     price: String,
     hours: String,

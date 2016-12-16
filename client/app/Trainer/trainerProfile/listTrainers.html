@@ -12,7 +12,8 @@
                     <th>Price</th>
                     <th>Certification</th>
                     <th>Insured</th>
-                    <th>Facility Or HouseCalls</th>
+                    <th>Facility Or House Calls</th>
+                    <th>Rating</th>
 
                 </tr>
                 <tr ng-repeat="trainer in trainersList">
@@ -24,6 +25,7 @@
                     <td>{{trainer.certification}}</td>
                     <td>{{trainer.insured}}</td>
                     <td>{{trainer.facilityOrHouseCalls}}</td>
+                    <td>{{trainer.rating}}</td>
                     <td><button class="md-primary md-raised" ng-click="editTrainer(trainer)">Edit</button>
                         <button class="md-warn" ng-click="deleteTrainer(trainer)">Delete</button>
                     </td>

@@ -20,5 +20,10 @@ angular.module('AnnAuthApp')
                         $scope.errors.other = err.message;
                     });
             }
-        }; 
+        };
+
+        $scope.goToSignUp = function() {
+            $location.path('/signup');
+        };
+
     });

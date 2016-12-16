@@ -11,7 +11,8 @@ var TrainerSchema = new Schema({
     facilityOrHouseCalls:String,
     location:String,
     name:String,
-    phone: String
+    phone: String,
+    rating:Number
 });
 
 module.exports = mongoose.model('Trainer', TrainerSchema);

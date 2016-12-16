@@ -8,10 +8,20 @@
                     <label>Name</label>
                     <input type="text" name="name" ng-model="trainer.name" required>
                 </md-input-container>
+                <md-input-container flex>
+                    <label>Phone</label>
+                    <input type="text" name="phone" ng-model="trainer.phone" required>
+                </md-input-container>
                 <md-content layout-padding>
                     Insured
-                    <md-checkbox ng-model="trainer.insured" aria-label="Insured" required >
-                    </md-checkbox>
+                    <md-radio-group ng-model="trainer.insured" required>
+                        <md-radio-button ng-value="true" aria-label="Label 1">
+                            Yes
+                        </md-radio-button>
+                        <md-radio-button ng-value="false" aria-label="Label 2">
+                            No
+                        </md-radio-button>
+                    </md-radio-group>
                 </md-content>
                 <md-input-container flex>
                     <label>Services</label>
@@ -44,6 +54,10 @@
                     <input type="text" name="price" ng-model="trainer.price" required>
                 </md-input-container>
                 <md-input-container flex>
+                    <label>Rating</label>
+                    <input type="text" name="rating" ng-model="trainer.rating" required>
+                </md-input-container>
+                <md-input-container flex>
                     <label>Cover photo</label>
                     <!-- <input type="file" name="photo" ng-model="trainer.photo" required> -->
                     <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
@@ -53,7 +67,7 @@
                 <div>
                     <md-button class="md-primary md-raised" type="submit">
                         Save
-                        </button>
+                        </md-button>
                 </div>
             </form>
         </div>
