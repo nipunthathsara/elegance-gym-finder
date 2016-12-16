@@ -8,6 +8,7 @@ var NutritionistSchema = new Schema({
   phone:String,
   address:{no:String,street:String,city:String},
   availability:Boolean,
+  // availability:String,
   rating:Number
 });
 

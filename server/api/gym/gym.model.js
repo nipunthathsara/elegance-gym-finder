@@ -7,7 +7,7 @@ var GymSchema = new Schema({
     name: String,
     location: String,
     type: String,
-    address: String,
+    address:{no:String,street:String,city:String},
     phone: String,
     price: String,
     hours: String,

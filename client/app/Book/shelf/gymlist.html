@@ -9,12 +9,14 @@
                     <th>Type</th>
                     <th>Phone</th>
                     <th>Location</th>
+                    <th>Address</th>
                 </tr>
                 <tr ng-repeat="gym in gymlist">
                     <td>{{gym.name}}</td>
                     <td>{{gym.type}}</td>
                     <td>{{gym.phone}}</td>
                     <td>{{gym.location}}</td>
+                    <td>{{gym.address.no}}{{','}}{{gym.address.street}}{{','}}{{gym.address.city}}</td>
                     <td><button class="md-primary md-raised" ng-click="editGym(gym)">Edit</button>
                         <button class="md-warn" ng-click="deleteGym(gym)">Delete</button>
                     </td>

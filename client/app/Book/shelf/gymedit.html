@@ -18,10 +18,21 @@
                     <label>Type</label>
                     <input type="text" name="type" ng-model="editGymObj.type" required>
                 </md-input-container>
-                <md-input-container flex>
-                    <label>Address</label>
-                    <input type="text" name="address" ng-model="editGymObj.address" required>
-                </md-input-container>
+                <md-content layout-padding>
+                    Address
+                    <md-input-container flex>
+                        <label>Number</label>
+                        <input type="text" name="no" ng-model="editGymObj.address.no">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Street</label>
+                        <input type="text" name="street" ng-model="editGymObj.address.street">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>City</label>
+                        <input type="text" name="city" ng-model="editGymObj.address.city">
+                    </md-input-container>
+                </md-content>
                 <md-input-container flex>
                     <label>Phone</label>
                     <input type="text" name="phone" ng-model="editGymObj.phone" required>

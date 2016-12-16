@@ -19,21 +19,20 @@ angular.module('AnnAuthApp')
         }
 
         $scope.editGym = function(gymObj) {               
-            $rootScope.editGymObj=gymObj;
+            $rootScope.editGymObj = gymObj;
             $location.path('/editGym');
-            // $rootScope.editGymObj = gymObj;
-            // console.log(gymObj.name);
-
         }
 
-
         $scope.addGym = function(form) {
-
             Shelf.addGym({
                     name: $scope.gym.name,
                     location: $scope.gym.location,
                     type: $scope.gym.type,
-                    address: $scope.gym.address,
+                    address: {
+                        no: $scope.gym.number,
+                        street: $scope.gym.street,
+                        city: $scope.gym.city,
+                    },
                     phone: $scope.gym.phone,
                     price: $scope.gym.price,
                     hours: $scope.gym.hours,
@@ -54,7 +53,11 @@ angular.module('AnnAuthApp')
             Shelf.editGym({
                     name: $rootScope.editGymObj.name,
                     location: $rootScope.editGymObj.location,
-                    address: $rootScope.editGymObj.address,
+                    address: {
+                        no: $rootScope.editGymObj.number,
+                        street: $rootScope.editGymObj.street,
+                        city: $rootScope.editGymObj.city,
+                    },
                     phone: $rootScope.editGymObj.phone,
                     price: $rootScope.editGymObj.price
                     //cover to be added

@@ -16,10 +16,21 @@
                     <label>Type</label>
                     <input type="text" name="type" ng-model="gym.type" required>
                 </md-input-container>
-                <md-input-container flex>
-                    <label>Address</label>
-                    <input type="text" name="address" ng-model="gym.address" required>
-                </md-input-container>
+                <md-content layout-padding>
+                    Address
+                    <md-input-container flex>
+                        <label>Number</label>
+                        <input type="text" name="number" ng-model="gym.number" required>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Street</label>
+                        <input type="text" name="street" ng-model="gym.street" required>
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>City</label>
+                        <input type="text" name="city" ng-model="gym.city" required>
+                    </md-input-container>
+                </md-content>
                 <md-input-container flex>
                     <label>Phone</label>
                     <input type="text" name="phone" ng-model="gym.phone" required>
