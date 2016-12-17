@@ -28,15 +28,16 @@ angular.module('AnnAuthApp')
 
         $scope.addNutritionist = function (form) {
             NutritionistService.addNutritionist({
-                name: $scope.nutritionist.name,
-                phone: $scope.nutritionist.phone,
-                address: {
-                    no: $scope.nutritionist.number,
-                    street: $scope.nutritionist.street,
-                    city: $scope.nutritionist.city,
+                name:$scope.nutritionist.name,
+                gender:$scope.nutritionist.gender,
+                phone:$scope.nutritionist.phone,
+                address:{
+                    no:$scope.nutritionist.number,
+                    street:$scope.nutritionist.street,
+                    city:$scope.nutritionist.city,
                 },
-                availability: $scope.nutritionist.availability,
-                rating: $scope.nutritionist.rating,
+                availability:$scope.nutritionist.availability,
+                rating:$scope.nutritionist.rating,
             })
                 .then(function () {
                     $location.path('/viewNutritionists');
@@ -50,15 +51,16 @@ angular.module('AnnAuthApp')
         $scope.submitEdit = function (form, id) {
 
             NutritionistService.editNutritionist({
-                name: $rootScope.tempNutritionist.name,
-                phone: $rootScope.tempNutritionist.phone,
-                address: {
-                    no: $rootScope.tempNutritionist.number,
-                    street: $rootScope.tempNutritionist.street,
-                    city: $rootScope.tempNutritionist.city,
+                name:$rootScope.tempNutritionist.name,
+                gender:$rootScope.tempNutritionist.gender,
+                phone:$rootScope.tempNutritionist.phone,
+                address:{
+                    no:$rootScope.tempNutritionist.number,
+                    street:$rootScope.tempNutritionist.street,
+                    city:$rootScope.tempNutritionist.city,
                 },
-                availability: $rootScope.tempNutritionist.availability,
-                rating: $rootScope.tempNutritionist.rating,
+                availability:$rootScope.tempNutritionist.availability,
+                rating:$rootScope.tempNutritionist.rating,
 
             }, id)
                 .then(function () {

@@ -1,71 +1,73 @@
 'use strict';
 
 angular.module('AnnAuthApp')
-    .controller('trainerCtrl', function($window, $location, $scope, $http, Trainer,$rootScope) {
+    .controller('trainerCtrl', function ($window, $location, $scope, $http, Trainer, $rootScope) {
         $scope.trainer = {};
         $scope.errors = {};
         // $scope.editTrainer = {};
 
-        Trainer.listTrainers().then(function(data) {
+        Trainer.listTrainers().then(function (data) {
             $scope.trainersList = data.data;
         });
 
-        $scope.deleteTrainer = function(trainerObj){
-            if(confirm('You sure want to delete this item?')){
-                Trainer.deleteTrainer(trainerObj._id).then(function(){
+        $scope.deleteTrainer = function (trainerObj) {
+            if (confirm('You sure want to delete this item?')) {
+                Trainer.deleteTrainer(trainerObj._id).then(function () {
                     $window.location.reload();
                 });
             }
         }
 
-        $scope.editTrainer = function(trainerObj) {
-          
+        $scope.editTrainer = function (trainerObj) {
+
             $rootScope.editTrainerObj = trainerObj;
-              $location.path('/editTrainer');
-           
+            $location.path('/editTrainer');
+
         }
 
-        $scope.addTrainer = function(form) {
+        $scope.addTrainer = function (form) {
 
             Trainer.addTrainer({
-                name: $scope.trainer.name,
-                location: $scope.trainer.location,
-                services: $scope.trainer.services,
-                phone: $scope.trainer.phone,
-                price: $scope.trainer.price,
-                certification: $scope.trainer.certification,
-                insured: $scope.trainer.insured,
-                facilityOrHouseCalls: $scope.trainer.facilityOrHouseCalls,
-                rating: $scope.trainer.rating,
-                cover: $scope.file
+                name:$scope.trainer.name,
+                gender:$scope.trainer.gender,
+                location:$scope.trainer.location,
+                services:$scope.trainer.services,
+                phone:$scope.trainer.phone,
+                price:$scope.trainer.price,
+                certification:$scope.trainer.certification,
+                insureStatus:$scope.trainer.insureStatus,
+                facilityOrHouseCalls:$scope.trainer.facilityOrHouseCalls,
+                rating:$scope.trainer.rating,
+                cover:$scope.file
             })
-                .then(function() {
+                .then(function () {
                     $location.path('/listTrainers');
                 })
-                .catch(function(err) {
+                .catch(function (err) {
                     $scope.errors.other = err.message; //not displaying
                     console.log('error occurred while saving trainer');
                 });
         }
 
-        $scope.submitEdit = function(form, id) {
+        $scope.submitEdit = function (form, id) {
 
             Trainer.editTrainer({
-                name: $rootScope.editTrainerObj.name,
-                location: $rootScope.editTrainerObj.location,
-                services: $rootScope.editTrainerObj.services,
-                phone: $rootScope.editTrainerObj.phone,
-                price: $rootScope.editTrainerObj.price,
-                certification: $rootScope.editTrainerObj.certification,
-                insured: $rootScope.editTrainerObj.insured,
-                facilityOrHouseCalls: $rootScope.editTrainerObj.facilityOrHouseCalls,
-                rating: $rootScope.editTrainerObj.rating,
+                name:$rootScope.editTrainerObj.name,
+                gender:$rootScope.editTrainerObj.gender,
+                location:$rootScope.editTrainerObj.location,
+                services:$rootScope.editTrainerObj.services,
+                phone:$rootScope.editTrainerObj.phone,
+                price:$rootScope.editTrainerObj.price,
+                certification:$rootScope.editTrainerObj.certification,
+                insureStatus:$rootScope.editTrainerObj.insureStatus,
+                facilityOrHouseCalls:$rootScope.editTrainerObj.facilityOrHouseCalls,
+                rating:$rootScope.editTrainerObj.rating,
                 //cover to be added
-            },id)
-                .then(function() {
+            }, id)
+                .then(function () {
                     $location.path('/listTrainers');
                 })
-                .catch(function(err) {
+                .catch(function (err) {
                     $scope.errors.other = err.message; //not displaying
                     console.log('error ocured while editing trainer');
                 });

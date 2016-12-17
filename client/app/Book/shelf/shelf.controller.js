@@ -18,27 +18,27 @@ angular.module('AnnAuthApp')
             }
         }
 
-        $scope.editGym = function(gymObj) {               
+        $scope.editGym = function(gymObj) {
             $rootScope.editGymObj = gymObj;
             $location.path('/editGym');
         }
 
         $scope.addGym = function(form) {
             Shelf.addGym({
-                    name: $scope.gym.name,
-                    latitude: $scope.gym.latitude,
-                    longitude: $scope.gym.longitude,
-                    type: $scope.gym.type,
-                    address: {
-                        no: $scope.gym.number,
-                        street: $scope.gym.street,
-                        city: $scope.gym.city,
+                    name:$scope.gym.name,
+                    latitude:$scope.gym.latitude,
+                    longitude:$scope.gym.longitude,
+                    type:$scope.gym.type,
+                    address:{
+                        no:$scope.gym.number,
+                        street:$scope.gym.street,
+                        city:$scope.gym.city,
                     },
-                    phone: $scope.gym.phone,
-                    price: $scope.gym.price,
-                    hours: $scope.gym.hours,
-                    webSite: $scope.gym.webSite,
-                    cover: $scope.file
+                    phone:$scope.gym.phone,
+                    price:$scope.gym.price,
+                    hours:$scope.gym.hours,
+                    webSite:$scope.gym.webSite,
+                    cover:$scope.file
                 })
                 .then(function() {
                     $location.path('/listGyms');
@@ -50,18 +50,18 @@ angular.module('AnnAuthApp')
         }
 
         $scope.submitEdit = function(form, id) {
-            
+
             Shelf.editGym({
-                    name: $rootScope.editGymObj.name,
-                    latitude: $rootScope.editGymObj.latitude,
-                    longitude: $rootScope.editGymObj.longitude,
-                    address: {
-                        no: $rootScope.editGymObj.number,
-                        street: $rootScope.editGymObj.street,
-                        city: $rootScope.editGymObj.city,
+                    name:$rootScope.editGymObj.name,
+                    latitude:$rootScope.editGymObj.latitude,
+                    longitude:$rootScope.editGymObj.longitude,
+                    address:{
+                        no:$rootScope.editGymObj.number,
+                        street:$rootScope.editGymObj.street,
+                        city:$rootScope.editGymObj.city,
                     },
-                    phone: $rootScope.editGymObj.phone,
-                    price: $rootScope.editGymObj.price
+                    phone:$rootScope.editGymObj.phone,
+                    price:$rootScope.editGymObj.price
                     //cover to be added
                 }, id)
                 .then(function() {

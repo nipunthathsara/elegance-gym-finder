@@ -19,7 +19,8 @@
                     <td>{{gym.latitude}}</td>
                     <td>{{gym.longitude}}</td>
                     <td>{{gym.address.no}}{{','}}{{gym.address.street}}{{','}}{{gym.address.city}}</td>
-                    <td><button class="md-primary md-raised" ng-click="editGym(gym)">Edit</button>
+                    <td>
+                        <button class="md-primary md-raised" ng-click="editGym(gym)">Edit</button>
                         <button class="md-warn" ng-click="deleteGym(gym)">Delete</button>
                     </td>
                 </tr>

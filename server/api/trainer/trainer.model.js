@@ -5,13 +5,14 @@ var mongoose = require('mongoose'),
 
 var TrainerSchema = new Schema({
     services:String,
-    price: String,
+    price:Number,
     certification:String,
-    insured:Boolean,
+    insureStatus:Boolean,
     facilityOrHouseCalls:String,
     location:String,
     name:String,
-    phone: String,
+    gender:String,
+    phone:String,
     rating:Number
 });
 
