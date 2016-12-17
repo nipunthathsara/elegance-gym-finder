@@ -5,20 +5,20 @@ angular.module('AnnAuthApp')
 
         return {
 
-            addTrainer: function(trainer) {
+            addTrainer: function (trainer) {
                 return $http.post('/api/trainers', trainer);
             },
 
-            listTrainers: function(){
+            listTrainers: function () {
                 return $http.get('/api/trainers');
             },
 
-            editTrainer: function(trainer,id){
-                return $http.put('/api/trainers/'+id, trainer);//send id as params to update
+            editTrainer: function (trainer, id) {
+                return $http.put('/api/trainers/' + id, trainer);//send id as params to update
                 //not done
             },
 
-            deleteTrainer: function(id){
+            deleteTrainer: function (id) {
                 return $http.delete('/api/trainers/' + id);
             }
 

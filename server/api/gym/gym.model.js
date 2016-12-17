@@ -4,24 +4,24 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var GymSchema = new Schema({
-    name: String,
+    name:String,
     latitude:Number,
-    longitude: Number,
-    type: String,
-    address:{no:String,street:String,city:String},
-    phone: String,
-    price: Number,
-    hours: String,
-    webSite: String
+    longitude:Number,
+    type:String,
+    address:{no:String, street:String, city:String},
+    phone:String,
+    price:Number,
+    hours:String,
+    webSite:String
     /*path: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    originalname: {
-        type: String,
-        required: true
-    }*/
+     type: String,
+     required: true,
+     trim: true
+     },
+     originalname: {
+     type: String,
+     required: true
+     }*/
 });
 
 

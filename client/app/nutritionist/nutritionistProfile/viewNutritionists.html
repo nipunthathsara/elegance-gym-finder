@@ -5,7 +5,7 @@
             <h1>Nutritionists</h1>
             <table class="table">
                 <tr>
-                
+
                     <th>Name</th>
                     <th>Gender</th>
                     <th>Phone</th>
@@ -17,10 +17,13 @@
                     <td>{{nutritionist.name}}</td>
                     <td>{{nutritionist.gender}}</td>
                     <td>{{nutritionist.phone}}</td>
-                    <td>{{nutritionist.address.no}}{{','}}{{nutritionist.address.street}}{{','}}{{nutritionist.address.city}}</td>
+                    <td>
+                        {{nutritionist.address.no}}{{','}}{{nutritionist.address.street}}{{','}}{{nutritionist.address.city}}
+                    </td>
                     <td>{{nutritionist.availability}}</td>
                     <td>{{nutritionist.rating}}</td>
-                    <td><button class="md-primary md-raised" ng-click="editNutritionist(nutritionist)">Edit</button>
+                    <td>
+                        <button class="md-primary md-raised" ng-click="editNutritionist(nutritionist)">Edit</button>
                         <button class="md-warn" ng-click="deleteNutritionist(nutritionist)">Delete</button>
                     </td>
                 </tr>

@@ -15,8 +15,8 @@ angular.module('AnnAuthApp')
                 return $http.get('/api/gyms');
             },
 
-            editGym: function (gym,id) {
-                return $http.put('/api/gyms/'+id, gym);//send id as params to update
+            editGym: function (gym, id) {
+                return $http.put('/api/gyms/' + id, gym);//send id as params to update
                 //not done
             },
 

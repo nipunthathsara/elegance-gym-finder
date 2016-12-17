@@ -3,7 +3,8 @@
     <div class="row">
         <div class="col-sm-12">
             <h1>Edit Nutritionist</h1>
-            <form class="form card-frame" name="form" ng-submit="submitEdit(form,tempNutritionist._id)" enctype="multipart/form-data" novalidate>
+            <form class="form card-frame" name="form" ng-submit="submitEdit(form,tempNutritionist._id)"
+                  enctype="multipart/form-data" novalidate>
                 <md-input-container flex>
                     <label>Name</label>
                     <input type="text" name="name" ng-model="tempNutritionist.name" required>
@@ -27,15 +28,15 @@
                     Address
                     <md-input-container flex>
                         <label>Number</label>
-                        <input type="text" name="no" ng-model="tempNutritionist.address.no">
+                        <input type="text" name="no" ng-model="tempNutritionist.address.no" required>
                     </md-input-container>
                     <md-input-container flex>
                         <label>Street</label>
-                        <input type="text" name="street" ng-model="tempNutritionist.address.street">
+                        <input type="text" name="street" ng-model="tempNutritionist.address.street" required>
                     </md-input-container>
                     <md-input-container flex>
                         <label>City</label>
-                        <input type="text" name="city" ng-model="tempNutritionist.address.city">
+                        <input type="text" name="city" ng-model="tempNutritionist.address.city" required>
                     </md-input-container>
                 </md-content>
                 <md-input-container flex>
@@ -53,11 +54,11 @@
                     <label>Rating</label>
                     <input type="text" name="rating" ng-model="tempNutritionist.rating" required>
                 </md-input-container>
-                    <div>
-                        <md-button class="md-primary md-raised" type="submit">
-                            Edit
-                        </md-button>
-                    </div>
+                <div>
+                    <md-button class="md-primary md-raised" type="submit">
+                        Edit
+                    </md-button>
+                </div>
             </form>
 
         </div>

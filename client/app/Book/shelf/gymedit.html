@@ -3,8 +3,9 @@
     <div class="row">
         <div class="col-sm-12">
             <h1>Edit Gym Details</h1>
-            
-            <form class="form card-frame" name="form" ng-submit="submitEdit(form,editGymObj._id)" enctype="multipart/form-data" novalidate>
+
+            <form class="form card-frame" name="form" ng-submit="submitEdit(form,editGymObj._id)"
+                  enctype="multipart/form-data" novalidate>
                 <md-input-container flex>
                     <label>Name</label>
                     <input type="text" name="name" ng-model="editGymObj.name" required>
@@ -25,15 +26,15 @@
                     Address
                     <md-input-container flex>
                         <label>Number</label>
-                        <input type="text" name="no" ng-model="editGymObj.address.no">
+                        <input type="text" name="no" ng-model="editGymObj.address.no" required>
                     </md-input-container>
                     <md-input-container flex>
                         <label>Street</label>
-                        <input type="text" name="street" ng-model="editGymObj.address.street">
+                        <input type="text" name="street" ng-model="editGymObj.address.street" required>
                     </md-input-container>
                     <md-input-container flex>
                         <label>City</label>
-                        <input type="text" name="city" ng-model="editGymObj.address.city">
+                        <input type="text" name="city" ng-model="editGymObj.address.city" required>
                     </md-input-container>
                 </md-content>
                 <md-input-container flex>
@@ -55,13 +56,16 @@
                 <md-input-container flex>
                     <label>Cover photo</label>
                     <!-- <input type="file" name="photo" ng-model="gym.photo" required> -->
-                    <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}">Select</div>
-                </md-input-container>
-                    <div>
-                        <md-button class="md-primary md-raised" type="submit">
-                            Edit
-                            </md-button>
+                    <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                         ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                         ngf-resize="{width: 100, height: 100}">Select
                     </div>
+                </md-input-container>
+                <div>
+                    <md-button class="md-primary md-raised" type="submit">
+                        Edit
+                    </md-button>
+                </div>
             </form>
 
         </div>

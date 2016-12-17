@@ -1,28 +1,28 @@
 'use strict';
 
 angular.module('AnnAuthApp')
-    .controller('LoginCtrl', function($scope, Auth, $location, $window) {
+    .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
         $scope.user = {};
         $scope.errors = {};
 
-        $scope.login = function(form) {
+        $scope.login = function (form) {
             $scope.submitted = true;
 
             if (form.$valid) {
                 Auth.login({
-                        email: $scope.user.email,
-                        password: $scope.user.password
-                    })
-                    .then(function() { 
+                    email: $scope.user.email,
+                    password: $scope.user.password
+                })
+                    .then(function () {
                         $location.path('/');
                     })
-                    .catch(function(err) {
+                    .catch(function (err) {
                         $scope.errors.other = err.message;
                     });
             }
         };
 
-        $scope.goToSignUp = function() {
+        $scope.goToSignUp = function () {
             $location.path('/signup');
         };
 
