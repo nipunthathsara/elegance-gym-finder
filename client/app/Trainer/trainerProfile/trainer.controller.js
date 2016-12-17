@@ -29,6 +29,7 @@ angular.module('AnnAuthApp')
 
             Trainer.addTrainer({
                 name: $scope.trainer.name,
+                gender:$scope.trainer.gender,
                 location: $scope.trainer.location,
                 services: $scope.trainer.services,
                 phone: $scope.trainer.phone,
@@ -51,15 +52,16 @@ angular.module('AnnAuthApp')
         $scope.submitEdit = function(form, id) {
 
             Trainer.editTrainer({
-                name: $rootScope.editTrainerObj.name,
-                location: $rootScope.editTrainerObj.location,
-                services: $rootScope.editTrainerObj.services,
-                phone: $rootScope.editTrainerObj.phone,
-                price: $rootScope.editTrainerObj.price,
-                certification: $rootScope.editTrainerObj.certification,
-                insureStatus: $rootScope.editTrainerObj.insureStatus,
-                facilityOrHouseCalls: $rootScope.editTrainerObj.facilityOrHouseCalls,
-                rating: $rootScope.editTrainerObj.rating,
+                name:$rootScope.editTrainerObj.name,
+                gender:$rootScope.editTrainerObj.gender,
+                location:$rootScope.editTrainerObj.location,
+                services:$rootScope.editTrainerObj.services,
+                phone:$rootScope.editTrainerObj.phone,
+                price:$rootScope.editTrainerObj.price,
+                certification:$rootScope.editTrainerObj.certification,
+                insureStatus:$rootScope.editTrainerObj.insureStatus,
+                facilityOrHouseCalls:$rootScope.editTrainerObj.facilityOrHouseCalls,
+                rating:$rootScope.editTrainerObj.rating,
                 //cover to be added
             },id)
                 .then(function() {

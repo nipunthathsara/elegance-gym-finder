@@ -10,7 +10,7 @@ var GymSchema = new Schema({
     type: String,
     address:{no:String,street:String,city:String},
     phone: String,
-    price: String,
+    price: Number,
     hours: String,
     webSite: String
     /*path: {

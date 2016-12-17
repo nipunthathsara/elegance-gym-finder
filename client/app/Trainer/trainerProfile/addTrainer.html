@@ -8,13 +8,24 @@
                     <label>Name</label>
                     <input type="text" name="name" ng-model="trainer.name" required>
                 </md-input-container>
+                <md-content layout-padding>
+                    Gender
+                    <md-radio-group ng-model="trainer.gender" required>
+                        <md-radio-button value="Male" aria-label="Label 1">
+                            Male
+                        </md-radio-button>
+                        <md-radio-button value="Female" aria-label="Label 2">
+                            Female
+                        </md-radio-button>
+                    </md-radio-group>
+                </md-content>
                 <md-input-container flex>
                     <label>Phone</label>
                     <input type="text" name="phone" ng-model="trainer.phone" required>
                 </md-input-container>
                 <md-content layout-padding>
                     Insured
-                    <md-radio-group ng-model="trainer.insured" required>
+                    <md-radio-group ng-model="trainer.insureStatus" required>
                         <md-radio-button ng-value="true" aria-label="Label 1">
                             Yes
                         </md-radio-button>

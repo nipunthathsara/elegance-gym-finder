@@ -7,6 +7,7 @@
                 <tr>
                 
                     <th>Name</th>
+                    <th>Gender</th>
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Availability</th>
@@ -14,6 +15,7 @@
                 </tr>
                 <tr ng-repeat="nutritionist in nutritionists">
                     <td>{{nutritionist.name}}</td>
+                    <td>{{nutritionist.gender}}</td>
                     <td>{{nutritionist.phone}}</td>
                     <td>{{nutritionist.address.no}}{{','}}{{nutritionist.address.street}}{{','}}{{nutritionist.address.city}}</td>
                     <td>{{nutritionist.availability}}</td>

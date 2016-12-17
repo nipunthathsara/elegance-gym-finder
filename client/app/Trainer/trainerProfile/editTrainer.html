@@ -9,6 +9,17 @@
                     <label>Name</label>
                     <input type="text" name="name" ng-model="editTrainerObj.name" required>
                 </md-input-container>
+                <md-content layout-padding>
+                    Gender
+                    <md-radio-group ng-model="editTrainerObj.gender" required>
+                        <md-radio-button value="Male" aria-label="Label 1">
+                            Male
+                        </md-radio-button>
+                        <md-radio-button value="Female" aria-label="Label 2">
+                            Female
+                        </md-radio-button>
+                    </md-radio-group>
+                </md-content>
                 <md-input-container flex>
                     <label>Phone</label>
                     <input type="text" name="phone" ng-model="editTrainerObj.phone" required>

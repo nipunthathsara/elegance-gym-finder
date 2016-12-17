@@ -29,6 +29,7 @@ angular.module('AnnAuthApp')
         $scope.addNutritionist = function (form) {
             NutritionistService.addNutritionist({
                 name: $scope.nutritionist.name,
+                gender:$scope.nutritionist.gender,
                 phone: $scope.nutritionist.phone,
                 address: {
                     no: $scope.nutritionist.number,
@@ -51,6 +52,7 @@ angular.module('AnnAuthApp')
 
             NutritionistService.editNutritionist({
                 name: $rootScope.tempNutritionist.name,
+                gender:$rootScope.tempNutritionist.gender,
                 phone: $rootScope.tempNutritionist.phone,
                 address: {
                     no: $rootScope.tempNutritionist.number,
