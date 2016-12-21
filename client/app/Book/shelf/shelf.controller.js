@@ -36,7 +36,9 @@ angular.module('AnnAuthApp')
                     },
                     phone:$scope.gym.phone,
                     price:$scope.gym.price,
-                    hours:$scope.gym.hours,
+                    weekDayHours:$scope.gym.weekDayHours,
+                    saturdayHours:$scope.gym.saturdayHours,
+                    sundayHours:$scope.gym.sundayHours,
                     webSite:$scope.gym.webSite,
                     cover:$scope.file
                 })
@@ -60,6 +62,9 @@ angular.module('AnnAuthApp')
                         street:$rootScope.editGymObj.street,
                         city:$rootScope.editGymObj.city,
                     },
+                    weekDayHours:$rootScope.editGymObj.weekDayHours,
+                    saturdayHours:$rootScope.editGymObj.saturdayHours,
+                    sundayHours:$rootScope.editGymObj.sundayHours,
                     phone:$rootScope.editGymObj.phone,
                     price:$rootScope.editGymObj.price
                     //cover to be added

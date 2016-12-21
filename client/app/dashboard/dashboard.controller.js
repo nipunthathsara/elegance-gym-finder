@@ -33,4 +33,8 @@ angular.module('AnnAuthApp')
             $location.path('/viewNutritionists')
         }
 
+        $scope.listUsers = function () {
+            $location.path('/listUsers');
+        }
+
     });

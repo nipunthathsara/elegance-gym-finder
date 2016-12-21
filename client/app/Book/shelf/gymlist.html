@@ -10,6 +10,10 @@
                     <th>Phone</th>
                     <th>Latitude</th>
                     <th>Longitude</th>
+                    <th>Price</th>
+                    <th>Week Day Hours</th>
+                    <th>Saturday Hours</th>
+                    <th>Sunday Hours</th>
                     <th>Address</th>
                 </tr>
                 <tr ng-repeat="gym in gymlist">
@@ -18,6 +22,10 @@
                     <td>{{gym.phone}}</td>
                     <td>{{gym.latitude}}</td>
                     <td>{{gym.longitude}}</td>
+                    <td>{{gym.price}}</td>
+                    <td>{{gym.weekDayHours}}</td>
+                    <td>{{gym.saturdayHours}}</td>
+                    <td>{{gym.sundayHours}}</td>
                     <td>{{gym.address.no}}{{','}}{{gym.address.street}}{{','}}{{gym.address.city}}</td>
                     <td>
                         <button class="md-primary md-raised" ng-click="editGym(gym)">Edit</button>
