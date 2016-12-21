@@ -47,7 +47,7 @@ exports.show = function (req, res) {
 
 exports.create = function (req, res) {
     //*******************Uploading the image to folder, doesn't work
-    console.log("reached");
+    /*console.log("reached");
     upload(req, res, function (err) {
         if (err) {
             console.log('Error Occured');
@@ -58,7 +58,7 @@ exports.create = function (req, res) {
         //res.end('Your File Uploaded');
         console.log('Photo Uploaded');
     });
-    console.log("reached");
+    console.log("reached");*/
     //*******************
 
     GymFacade.create(req.body, function (err, gym) {
