@@ -40,6 +40,17 @@
                     <input type="text" name="services" ng-model="trainer.services" required>
                 </md-input-container>
                 <md-input-container flex>
+                    Availability
+                    <md-radio-group ng-model="trainer.availability" required>
+                        <md-radio-button name="true" ng-value="true" aria-label="Label 1">
+                            Yes
+                        </md-radio-button>
+                        <md-radio-button name="false" ng-value="false" aria-label="Label 2">
+                            No
+                        </md-radio-button>
+                    </md-radio-group>
+                </md-input-container>
+                <md-input-container flex>
                     <label>Location</label>
                     <input type="text" name="location" ng-model="trainer.location" required>
                 </md-input-container>

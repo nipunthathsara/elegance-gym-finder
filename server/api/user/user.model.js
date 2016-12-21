@@ -14,7 +14,10 @@ var UserSchema = new Schema({
     },
     hashedPassword: String,
     provider: String,
-    salt: String
+    salt: String,
+    bookmarkedGyms:[],
+    bookmarkedTrainers:[],
+    bookmarkedNutritionists:[]
 });
 
 /**
