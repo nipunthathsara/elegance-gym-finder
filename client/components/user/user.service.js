@@ -1,4 +1,7 @@
-'use strict';
+//There is another User service alreeady, this won't be needed. 
+//uncommenting this service makes erros
+
+/*'use strict';
 
 angular.module('AnnAuthApp')
     .factory('User', function User($http) {
@@ -23,4 +26,4 @@ angular.module('AnnAuthApp')
             }
 
         };
-    });
+    });*/
