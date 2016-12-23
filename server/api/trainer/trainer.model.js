@@ -14,7 +14,8 @@ var TrainerSchema = new Schema({
     gender:String,
     phone:String,
     rating:Number,
-    availability:Boolean
+    availability:Boolean,
+    email: String
 });
 
 module.exports = mongoose.model('Trainer', TrainerSchema);
