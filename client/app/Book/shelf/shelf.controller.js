@@ -55,10 +55,11 @@ angular.module('AnnAuthApp')
 
             Shelf.editGym({
                     name:$rootScope.editGymObj.name,
+                    type:$rootScope.editGymObj.type,
                     latitude:$rootScope.editGymObj.latitude,
                     longitude:$rootScope.editGymObj.longitude,
                     address:{
-                        no:$rootScope.editGymObj.number,
+                        no:$rootScope.editGymObj.no,
                         street:$rootScope.editGymObj.street,
                         city:$rootScope.editGymObj.city,
                     },
@@ -66,7 +67,8 @@ angular.module('AnnAuthApp')
                     saturdayHours:$rootScope.editGymObj.saturdayHours,
                     sundayHours:$rootScope.editGymObj.sundayHours,
                     phone:$rootScope.editGymObj.phone,
-                    price:$rootScope.editGymObj.price
+                    price:$rootScope.editGymObj.price,
+                    webSite:$rootScope.editGymObj.webSite
                     //cover to be added
                 }, id)
                 .then(function() {

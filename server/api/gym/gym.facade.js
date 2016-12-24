@@ -5,9 +5,12 @@ var GymModel = require('./gym.model');
 
 // Get list of gyms
 exports.findAll = function (cb) {
-    GymModel.find(cb).limit(2);
+    GymModel.find(cb);  //.limit(2);
 
+};
 
+exports.getNearestGymsByType = function (gymType, cb) {
+    GymModel.find({type:gymType},cb);
 };
 
 // exports.findTen = function(cb) {
