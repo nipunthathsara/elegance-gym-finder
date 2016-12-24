@@ -41,6 +41,17 @@
                     <input type="text" name="services" ng-model="editTrainerObj.services" required>
                 </md-input-container>
                 <md-input-container flex>
+                    Availability
+                    <md-radio-group ng-model="editTrainerObj.availability" required>
+                        <md-radio-button name="availability" ng-value="true" aria-label="Label 1">
+                            Yes
+                        </md-radio-button>
+                        <md-radio-button name="availability" ng-value="false" aria-label="Label 2">
+                            No
+                        </md-radio-button>
+                    </md-radio-group>
+                </md-input-container>
+                <md-input-container flex>
                     <label>Location</label>
                     <input type="text" name="location" ng-model="editTrainerObj.location" required>
                 </md-input-container>

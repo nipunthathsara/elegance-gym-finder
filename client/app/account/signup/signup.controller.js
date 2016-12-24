@@ -13,7 +13,8 @@ angular.module('AnnAuthApp')
                     email: $scope.user.email,
                     password: $scope.user.password,
                     confirmedPassword: $scope.user.confirmedPassword,
-                    name: $scope.user.name
+                    name: $scope.user.name,
+                    mobile: $scope.user.mobile
                 })
                     .then(function () {
                         $location.path('/');

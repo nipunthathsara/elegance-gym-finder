@@ -23,6 +23,6 @@ router.post('/', controller.create);
 router.put('/:id', controller.update);
 router.patch('/:id', controller.update);
 //******nipun delte route
-router.delete('/:id', auth.isAuthenticated(), controller.delete);//send id in params
+router.delete('/:id', controller.delete);//send id in params
 
 module.exports = router;

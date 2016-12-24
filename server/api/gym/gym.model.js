@@ -11,7 +11,9 @@ var GymSchema = new Schema({
     address:{no:String, street:String, city:String},
     phone:String,
     price:Number,
-    hours:String,
+    weekDayHours:String,
+    saturdayHours:String,
+    sundayHours:String,
     webSite:String
     /*path: {
      type: String,
