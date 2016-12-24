@@ -13,8 +13,8 @@ var router = express.Router();
 // router.get('/:id',auth.isAuthenticated(), controller.show);
 router.get('/',  controller.index);
 router.get('/:id', controller.show);
-router.get('/:id', controller.show);
 router.get('/findTen/:id', controller.findTen);//remove this route
+router.get('/nearestGymsByType/:type',controller.getNearestGymsByType);
 
 // router.post('/', auth.isAuthenticated(), controller.create);
 // router.put('/:id', auth.isAuthenticated(), controller.update);

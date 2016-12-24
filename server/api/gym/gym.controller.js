@@ -17,6 +17,19 @@ exports.index = function (req, res) {
     });
 };
 
+exports.getNearestGymsByType = function (req, res) {
+    GymFacade.getNearestGymsByType(req.params.type,function (err, gyms) {
+        if (err) {
+            return handleError(res, err);
+        }
+
+        if (gyms) {
+            return res.json(200, gyms);
+        }
+
+    });
+};
+
 
 exports.findTen = function (req, res) {
     GymFacade.findTen(function (err, gyms) {
