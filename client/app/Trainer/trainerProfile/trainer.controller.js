@@ -39,6 +39,8 @@ angular.module('AnnAuthApp')
                 insureStatus:$scope.trainer.insureStatus,
                 facilityOrHouseCalls:$scope.trainer.facilityOrHouseCalls,
                 rating:$scope.trainer.rating,
+                latitude:$scope.trainer.latitude,
+                longitude:$scope.trainer.longitude,
                 cover:$scope.file
             })
                 .then(function () {
@@ -64,6 +66,8 @@ angular.module('AnnAuthApp')
                 insureStatus:$rootScope.editTrainerObj.insureStatus,
                 facilityOrHouseCalls:$rootScope.editTrainerObj.facilityOrHouseCalls,
                 rating:$rootScope.editTrainerObj.rating,
+                latitude:$scope.editTrainerObj.latitude,
+                longitude:$scope.editTrainerObj.longitude,
                 //cover to be added
             }, id)
                 .then(function () {

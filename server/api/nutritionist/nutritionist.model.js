@@ -9,7 +9,9 @@ var NutritionistSchema = new Schema({
     phone:String,
     address:{no:String, street:String, city:String},
     availability:Boolean,
-    rating:Number
+    rating:Number,
+    latitude: Number,
+    longitude: Number
 });
 
 module.exports = mongoose.model('Nutritionist', NutritionistSchema);

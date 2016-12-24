@@ -12,6 +12,8 @@
                     <th>Address</th>
                     <th>Availability</th>
                     <th>Rating</th>
+                    <th>Latiiude</th>
+                    <th>Longitude</th>
                 </tr>
                 <tr ng-repeat="nutritionist in nutritionists">
                     <td>{{nutritionist.name}}</td>
@@ -22,6 +24,9 @@
                     </td>
                     <td>{{nutritionist.availability}}</td>
                     <td>{{nutritionist.rating}}</td>
+                    <td>{{nutritionist.latitude}}</td>
+                    <td>{{nutritionist.longitude}}</td>
+
                     <td>
                         <button class="md-primary md-raised" ng-click="editNutritionist(nutritionist)">Edit</button>
                         <button class="md-warn" ng-click="deleteNutritionist(nutritionist)">Delete</button>

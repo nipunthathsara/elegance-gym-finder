@@ -38,6 +38,8 @@ angular.module('AnnAuthApp')
                 },
                 availability:$scope.nutritionist.availability,
                 rating:$scope.nutritionist.rating,
+                latitude:$scope.nutritionist.latitude,
+                longitude:$scope.nutritionist.longitude,
             })
                 .then(function () {
                     $location.path('/viewNutritionists');
@@ -61,6 +63,8 @@ angular.module('AnnAuthApp')
                 },
                 availability:$rootScope.tempNutritionist.availability,
                 rating:$rootScope.tempNutritionist.rating,
+                latitude:$scope.tempNutritionist.latitude,
+                longitude:$scope.tempNutritionist.longitude,
 
             }, id)
                 .then(function () {
